@@ -1,0 +1,351 @@
+body{
+    font-family: 'Inter', sans-serif;
+    color: var(--baseColorfont);
+    margin: 0;
+    background: var(--base);
+}
+/*Variables para colores*/
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: #168ef4;
+    --twitter: hsl(203, 89%, 53%);
+    --instagram-1: hsl(37, 97%, 70%);
+    --instagram-2: hsl(329, 70%, 58%);
+    --youtube: hsl(348, 97%, 39%);
+    --cardTitle: #5f616d;
+    --cardBackground: #f0f3fa;
+    --lightgray: #f8f9fe;
+    --baseBackground: white;
+    --baseColorfont: #1d2029;
+    --switch: white;
+    --backgroundSwicth: #5f616d;
+
+}
+
+
+/* Header */
+.header{
+    padding-bottom: 70px;
+    background-color: var(--lightgray);
+    border-radius: 0 0 20px 20px;
+    padding-top: 2em;
+}
+
+.header p {
+    margin: 0;
+}
+
+.header h1{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.Header-total{
+    margin: 0.5em 0;
+    color: var(--cardTitle);
+    font-weight: bold;
+    font-size: 0.8em;
+    border-bottom: 2px solid var(--cardTitle);
+    padding-bottom: 1em;
+}
+
+.wrapper{
+    padding: 0 30px;
+}
+
+.dark-mode-title{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.dark-mode{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Para ocultart el switch */
+.checkbox{
+    display: none;
+}
+
+/* Para el checkbox del elemento*/
+.checkbox:checked ~ .switch:before{
+    transform: translateX(40px);
+
+}
+
+/* Para el boton del switch */
+.switch{
+    width: 80px;
+    height: 40px;
+    display: block;
+    border-radius: 20px;
+    background: var(--backgroundSwicth);
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+}
+
+.switch::before{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: var(--switch);
+    border-radius: 50%;
+    transform: translateX(0px);
+    transition: 0.3s;
+    will-change: transform;
+}
+
+/* Card */
+
+.Top-Cards{
+    margin-top: -50px;
+}
+
+.card{
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--cardBackground);
+    text-align: center;    
+    border-radius: 10px;
+    padding: 1.5em 0;
+    position: relative;
+}
+
+.card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: var(--cardTitle);   
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.card-title img {
+    margin-right: 5px;
+}
+
+.card::before{
+    content: "";
+    height: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.card.facebook::before{
+    background: var(--facebook);
+}
+
+.card.twitter::before{
+    background: var(--twitter);
+}
+
+.card.instagram::before{
+    background-image: linear-gradient(to right, var(--instagram-1) 0%, var(--instagram-2) 100%);
+}
+
+.card.youtube::before{
+    background: var(--youtube);
+}
+
+
+.Card-Followers-Number{
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.Card-Followers-Title{
+    display: block;
+    text-transform: uppercase;
+    color: var(--cardTitle);
+    font-size: 0.8em;
+    letter-spacing: 0.5em;
+}
+
+
+.card-today{
+    margin-top: 20px;
+    color: var(--lime-green);
+    font-size: 0.8em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-today img{
+    margin-right: 5px;    
+}
+
+
+/*Uso de grid con CSS*/
+.grid{
+    display: grid;
+    grid-row-gap: 30px;
+
+}
+
+/* Overview */
+.Overview{
+    margin-top: 20px;
+}
+
+.Overview h2{
+    color: var(--cardTitle);
+}
+
+.card-small{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1em;
+    background-color: var(--cardBackground);
+    border-radius: 10px;
+    padding: 1.7em;
+}
+
+.card-small p{
+    margin: 0;
+}
+
+.card-small-views{
+    color: var(--cardTitle);
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.card-small-icon{
+    text-align: right;
+
+}
+
+.card-small-number{
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 0.9;
+
+}
+
+.card-small-percentage{
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--lime-green);
+    font-size: 0.6em;
+}
+
+.card-small-percentage.is-danger{
+    color: var(--bright-red);
+}
+
+.card-small-percentage span{
+    display: flex;
+    align-items: center;
+}
+
+.card-small-percentage img{
+    margin-right: 5px;
+}
+
+
+/*Responsive para PC*/
+@media screen and (min-width: 480px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1.5em;
+    }
+
+    .wrapper{
+        max-width: 1440px;
+        margin: auto;
+    }
+}
+
+/*Responsive para PC*/
+@media screen and (min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1.5em;
+    }
+
+    .Header-total{
+        border: none;
+    }
+
+    .header-grid{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+    }
+}
+
+/*Responsive para Tablet*/
+@media screen and (min-width: 1024px){
+    .grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .Header-total{
+        border: none;
+    }
+
+    .header-grid{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+    }
+
+}
+
+.is-dark-mode{
+    --cardBackground: #252b43;
+    --cardTitle: #8088ad:
+    --lightgray: #1d2029;
+    --cardTitle: #8088ad;
+    --switch: white;
+    --base: #1d2029;
+    --lightgray: #1d2029;
+    --backgroundSwicth: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+    --baseColorfont: #8088ad;
+
+}
+
+.is-light-mode{
+    --cardTitle: #5f616d;
+    --cardBackground: #f0f3fa;
+    --lightgray: #f8f9fe;
+    --baseBackground: white;
+    --baseColorfont: #1d2029;
+    --switch: white;
+    --backgroundSwicth: #5f616d;
+}
+
+/* Dark Mode Para */
+@media (prefers-color-scheme: dark){
+    body{
+        background: #1d2029;
+        color: white;
+        --baseBackground: white;
+      
+    }
+    .header{
+        background: #1d2029;
+    }
+
+    :root{
+        --cardBackground: #252b43;
+        --cardTitle: #8088ad:
+        --lightgray: #1d2029;
+        --cardTitle: #8088ad;
+        --base: #1d2029;
+    }
+
+}
